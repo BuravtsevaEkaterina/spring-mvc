@@ -52,6 +52,6 @@ public class Car {
         carList.add(new Car("model3", "seria3", 400));
         carList.add(new Car("model4", "seria4", 100));
         carList.add(new Car("model5", "seria5", 350));
-        return carList;
+        return carList.subList(0, num);
     }
 }
