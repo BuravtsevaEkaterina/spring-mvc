@@ -1,17 +1,16 @@
-package web.Model;
+package web.model;
 
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@Repository
+@Component
 public class Car {
     private String model;
     private String series;
     private int maxSpeed;
-    private static List<Car> carList;
+    private List<Car> carList;
 
     public Car() {}
 
@@ -45,13 +44,13 @@ public class Car {
         this.maxSpeed = maxSpeed;
     }
 
-    public static List<Car> getCarsList(int num) {
+    public List<Car> getCarsList() {
         carList = new ArrayList<>();
         carList.add(new Car("model1", "seria1", 150));
         carList.add(new Car("model2", "seria2", 250));
         carList.add(new Car("model3", "seria3", 400));
         carList.add(new Car("model4", "seria4", 100));
         carList.add(new Car("model5", "seria5", 350));
-        return carList.subList(0, num);
+        return carList;
     }
 }
